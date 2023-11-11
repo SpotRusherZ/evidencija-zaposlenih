@@ -1,0 +1,110 @@
+\documentclass[a4paper]{article}
+
+\usepackage{color}
+\usepackage{url}
+\usepackage[T2A]{fontenc} 
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\usepackage[english,serbian]{babel}
+\usepackage[unicode]{hyperref}
+\hypersetup{colorlinks,citecolor=red,filecolor=green,linkcolor=blue,urlcolor=blue}
+
+\title{Slučajevi upotrebe vođe tima}
+
+
+\begin{document}
+
+\maketitle
+
+\section{Slučajevi upotrebe}
+
+\subsection{Vođa tima}
+\subsubsection{Slučaj upotrebe: Kreiranje zahteva za ponovnu evaluaciju zaposlenog}
+\begin{enumerate}
+    \item \textbf{Kratak opis:} Nakon što vođa tima proceni da je na osnovu rada zaposlenog potrebno ponovo odraditi evaluaciju njegovog rada, kako bi utvrdili da li radnik zaslužuje povećanje senioriteta, vođa tima kreira zahtev za evaluaciju koji sistem čuva.
+    \item \textbf{Učesnici:}
+        \begin{itemize}
+            \item Vođa tima
+        \end{itemize}
+    \item \textbf{Preduslovi:} Vođa tima je registrovan korisnik sistema. Vođa tima ima pristup internetu. Sistem je u funkcii.
+    \item \textbf{Postuslovi:} Zahtev za evaluaciju je sačuvan u sistemu. Baza je ažurirana.
+    \item \textbf{Osnovni tok:}
+        \begin{enumerate}
+            \item Vođa tima otvara stranicu gde se nalazi dugme za kreiranje zahteva za evaluaciju.
+            \item Vođa tima pritiska dugme za kreiranje zahteva za evaluaciju.
+            \item Sistem mu prikazuje obrazac za kreiranje novog zahteva i padajući meni za izbor zaposlenog za koga se kreira zahtev.
+            \item Vođa tima iz padajućeg menija bira zaposlenog za koga kreira zahtev za evaluaciju.
+            \item Vođa tima popunjava popunjava obrazac.
+            \item Vođa tima pritiskom na dugme potvrđuje kreiranje novog zahteva.
+            \item Sistem vrši validaciju unetih podataka.
+            \item Sistem čuva kreirani zahtev za evaluaciju.
+            \item Sistem obaveštava vuđu tima o uspešno kreiranom zahtevu.
+        \end{enumerate}
+    \item \textbf{Alternativni tokovi:}
+        \begin{enumerate}
+            \item \textbf{Vođa tima je uneo nevalidne podatke}. Ukoliko u koraku (g) sistem utvrdi da je vođa tima ostaio neko obavezno polje prazno ili da vođa tima nije izabrao nijednog zaposlenog, sistem obaveštava vođu tima obeležavanjem neispravnog polja. Proces se nastavlja u koraku (d).
+        \end{enumerate}
+    \item \textbf{Podtokovi:} /
+    \item \textbf{Specijalni zahtevi:} /
+    \item \textbf{Dodatne informacije:} Potrebni podaci za popunjavanje obrazca su: obrazloženje zašto se kreira novi zahtev za evaluaciju zaposlenog.
+\end{enumerate}
+
+\subsubsection{Slučaj upotrebe: Kreiranje zahteva za korišćenje benefita}
+\begin{enumerate}
+    \item \textbf{Kratak opis:} Nakon što vođa tima odluči da određeni zaposleni treba da iskoristi benefit koji firma pruža, vođa tima kreira zahtev za korišćenje benefita od strane zaposlenog.
+    \item \textbf{Učesnici:}
+        \begin{itemize}
+            \item Vođa tima
+        \end{itemize}
+    \item \textbf{Preduslovi:} Vođa tima je registrovan korisnik sistema. Vođa tima ima pristup internetu. Sistem je u funkcii.
+    \item \textbf{Postuslovi:} Zahtev za korišćenje benefita je sačuvan u sistemu. Baza je ažurirana.
+    \item \textbf{Osnovni tok:}
+        \begin{enumerate}
+            \item Vođa tima otvara stranicu gde se nalazi dugme za kreiranje zahteva za korišćenje benefita.
+            \item Vođa tima pritiska dugme za kreiranje zahteva za korišćenje benefita.
+            \item Sistem mu prikazuje obrazac za kreiranje novog zahteva i padajući meni za izbor zaposlenog za koga se kreira zahtev.
+            \item Vođa tima iz padajućeg menija bira zaposlenog za koga kreira zahtev.
+            \item Vođa tima popunjava popunjava obrazac.
+            \item Vođa tima pritiskom na dugme potvrđuje kreiranje novog zahteva.
+            \item Sistem vrši validaciju unetih podataka.
+            \item Sistem čuva kreirani zahtev.
+            \item Sistem obaveštava vođu tima o uspešno kreiranom zahtevu.
+        \end{enumerate}
+    \item \textbf{Alternativni tokovi:}
+        \begin{enumerate}
+            \item \textbf{Vođa tima je uneo nevalidne podatke}. Ukoliko u koraku (g) sistem utvrdi da je vođa tima ostaio neko obavezno polje prazno ili da vođa tima nije izabrao nijednog zaposlenog, sistem obaveštava vođu tima obeležavanjem neispravnog polja. Proces se nastavlja u koraku (d).
+        \end{enumerate}
+    \item \textbf{Podtokovi:} /
+    \item \textbf{Specijalni zahtevi:} /
+    \item \textbf{Dodatne informacije:} Potrebni podaci za popunjavanje obrazca su: Tip benefita koji zaposleni treba da iskoristi, obrazloženje zašto je potrebno da ga iskoristi, opis kako će benefit uticati na njegov rad i cena koju bi firma trebalo da plati.
+\end{enumerate}
+
+\subsubsection{Slučaj upotrebe: Odobravanje zahteva zaposlenog}
+\begin{enumerate}
+    \item \textbf{Kratak opis}: Na osnovu obrazloženog zahteva koji je zaposleni kreirao, vođa tima odobrava zahtev. Sistem beleži promenu statusa zahteva zaposlenog.
+    \item \textbf{Učesnici:}
+        \begin{itemize}
+            \item Vođa tima
+        \end{itemize}
+    \item \textbf{Preduslovi:} Vođa tima je registrovan korisnik sistema. Vođa tima ima pristup internetu. Sistem je u funkcii. Postoji zahtev od bar jednog zaposlenog.
+    \item \textbf{Postuslovi:} Ažuriran je zahtev koji je kreirao zaposleni. Baza je ažurirana.
+    \item \textbf{Osnovni tok:}
+        \begin{enumerate}
+            \item Vođa tima otvara stranicu sa svim zahtevima zaposlenih iz njegovog tima.
+            \item Vođa tima pritiska dugme za otvaranje informacija o konkretnom zahtevu.
+            \item Sistem mu prikazuje informacije o zahtevu i padajući meni sa opcijama potvrdi ili odbij.
+            \item Vođa tima bira opciju iz padajućeg menija.
+            \item Vođa tima pritiskom na dugme potvrđuje promene.
+            \item Sistem čuva promenu statusa zahteva.
+            \item Sistem obaveštava vođu tima o uspešnoj promeni statusa.
+        \end{enumerate}
+    \item \textbf{Alternativni tokovi:}
+        \begin{enumerate}
+            \item \textbf{Vođa tima nije izabrao opciju potvrdi.} Ako vođa tima u koraku (e) nije izabrao jednu od dve opcije iz padajućeg menija ili je izabrao odbij, sistem neće evidentirati promenu statusa. Proces se nastavlja iz koraka (b).
+        \end{enumerate}
+    \item \textbf{Podtokovi:} /
+    \item \textbf{Specijalni zahtevi:} Mora postojati obrazloženje od strane zaposlenog u zahtevu, zašto je zahtev kreiran.
+    \item \textbf{Dodatne informacije:} Zahtevi zaposlenog mogu biti zahtev za rad od kuće i zahtev za korišćenje benefita.
+\end{enumerate}
+\end{document}
