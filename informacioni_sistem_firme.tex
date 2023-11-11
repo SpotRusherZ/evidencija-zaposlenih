@@ -1,0 +1,54 @@
+\documentclass[a4paper]{article}
+
+\usepackage{color}
+\usepackage{url}
+\usepackage[T2A]{fontenc} 
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\usepackage[english,serbian]{babel}
+\usepackage[unicode]{hyperref}
+\hypersetup{colorlinks,citecolor=red,filecolor=green,linkcolor=blue,urlcolor=blue}
+
+\title{IS_Firme}
+\date{November 2023}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+
+    \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+    \center
+    \textup{\Large Univerzitet u Beogradu\\Matematički fakultet}\\[1.5cm]
+    \textup{\Large Projekat iz predmeta Informacioni sistemi 2022/2023.}\\[0.4cm]
+
+    \HRule \\[0.4cm]
+    { \huge \bfseries Informacioni sistem firme}\\[0.4cm]
+    \HRule \\[1.1cm]
+\end{titlepage}
+
+\newpage
+\renewcommand*\contentsname{Sadržaj:}
+\tableofcontents
+
+\newpage
+\section{Analiza sistema}
+\subsection{Uvod i osnovna ideja}
+Ideja projekta je pravljenje informacionog sistema koji bi se koristio za vođenje evidencije o zaposlenima u jednoj programerskoj firmi. Ono što to podrazumeva je beleženje radnog vremena, beleženje odmora i slobodnih dana, rada od kuće, kao i informacije o benefitima čije troškove pokriva firma.
+
+\subsection{Korisnici sistema}
+Korisnici sistema su:
+\begin{enumerate}
+    \item \textbf{Zaposleni} \newline
+    Zaposleni su najbrojniji korisnici sistema. Svakom zaposlenom je dodeljen tim kome on pripada, zaposleni može da menja timove. Funkcionalnosti koje će sistem pružiti radnicima je prijavljivanje ostvarenog radnog vremena, prijavljivanje odmora, podnošenje zahteva za rad od kuće i podnošenje zahteva za korišćenje benefita.
+    \item \textbf{Vođa tima} \newline
+    Vođa tima upravlja timom koji mu je dodeljen, on je i sam zaposleni. U svakom trenutku mu se njegovom timu može dodeliti novi član. Funkcionalnosti koje sistem pruža vođi tima su odobravanje zahteva zaposlenog, kreiranje zahteva za re-evaluaciju zaposlenog, zahtev za korišćenje benefita za nekog zaposlenog.
+    \item \textbf{Menadžer ljudskih resursa} \newline 
+    Menadžer ljudskih resursa je zadužen za evidentiranje informacija koje su bitne za sve zaposlene. Funkcionalnosti koje sistem pruža menadžeru za ljudske resurse su obračun plata, unos važnih datuma i dodela odobrenih benefita i bonusa.
+    \item \textbf{Administrator} \newline
+    Administrator je zadužen za odrzavanje sistema. Njegove dužnosti tokom korišćenja sistema su kreiranje naloga zaposlenima, brisanje naloga ljudima koji su prekinuli radni odnos, omogućavanje ponovnog pristupa nalogu pri zahtevu zaposlenog i obezbeđivanje opreme za rad. 
+\end{enumerate}
+
+
+\end{document}
