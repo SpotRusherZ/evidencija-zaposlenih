@@ -1,0 +1,109 @@
+\documentclass[a4paper]{article}
+
+\usepackage{color}
+\usepackage{url}
+\usepackage[T2A]{fontenc} 
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\usepackage[english,serbian]{babel}
+\usepackage[unicode]{hyperref}
+\hypersetup{colorlinks,citecolor=red,filecolor=green,linkcolor=blue,urlcolor=blue}
+
+\title{Slučajevi upotrebe menadžera ljudskih resursa}
+
+
+\begin{document}
+
+\maketitle
+
+\section{Slučajevi upotrebe}
+
+\subsection{HR Menadžer ljudskih resursa}
+\subsubsection{Slučaj upotrebe: Obračun plata}
+\begin{enumerate}
+    \item \textbf{Kratak opis:} HR menadžer vrši obračun plata za zaposlene u firmi.
+    \item \textbf{Učesnici:}
+        \begin{itemize}
+            \item HR menadžer
+        \end{itemize}
+    \item \textbf{Preduslovi:} HR menadžer je registrovan korisnik sistema. HR menadžer ima pristup podacima o radnicima i njihovim platama. Sistem je u funkciji.
+    \item \textbf{Postuslovi:} Obračun plata je izvršen, i informacije o platama su ažurirane u sistemu.
+    \item \textbf{Osnovni tok:}
+        \begin{enumerate}
+            \item HR menadžer otvara stranicu za obračun plata.
+            \item Sistem prikazuje listu zaposlenih.
+            \item HR menadžer bira zaposlenog za koga želi da izvrši obračun plate.
+            \item Sistem prikazuje podatke o radniku, uključujući radne sate, dodatke, odbitke itd.
+            \item HR menadžer unosi ili proverava podatke, vrši i potvrđuje obračun plate.
+            \item Sistem čuva izmene u platama.
+            \item Sistem obaveštava HR menadžera o uspešnom obračunu plata.
+        \end{enumerate}
+    \item \textbf{Alternativni tokovi:}
+        \begin{enumerate}
+            \item \textbf{HR menadžer nije uneo potrebne informacije.} Ako HR menadžer u koraku (e) nije uneo sve potrebne informacije (npr. radne sate), sistem obaveštava HR menadžera i vraća ga na korak (d).
+        \end{enumerate}
+    \item \textbf{Podtokovi:} /
+    \item \textbf{Specijalni zahtevi:} /
+    \item \textbf{Dodatne informacije:} HR menadžer može pregledati istoriju obračuna plata za svakog zaposlenog.
+\end{enumerate}
+
+\subsubsection{Slučaj upotrebe: Unos važnih datuma}
+\begin{enumerate}
+    \item \textbf{Kratak opis:} HR menadžer vrši unos važnih datuma vezanih za zaposlene, kao što su datumi zapošljavanja, itd.
+    \item \textbf{Učesnici:}
+        \begin{itemize}
+            \item HR menadžer
+        \end{itemize}
+    \item \textbf{Preduslovi:} HR menadžer je registrovan korisnik sistema. HR menadžer ima pristup podacima o radnicima. Sistem je u funkciji.
+    \item \textbf{Postuslovi:} Informacije o važnim datumima su ažurirane u sistemu.
+    \item \textbf{Osnovni tok:}
+        \begin{enumerate}
+            \item HR menadžer otvara stranicu za unos važnih datuma.
+            \item Sistem prikazuje listu zaposlenih.
+            \item HR menadžer bira zaposlenog za koga želi da unese važan datum.
+            \item Sistem prikazuje obrazac za unos datuma.
+            \item HR menadžer unosi datum i opis događaja.
+            \item HR menadžer pritiskom na dugme potvrđuje unos.
+            \item Sistem čuva uneti datum.
+            \item Sistem obaveštava HR menadžera o uspešnom unosu važnog datuma.
+        \end{enumerate}
+    \item \textbf{Alternativni tokovi:} /
+    \item \textbf{Podtokovi:} /
+    \item \textbf{Specijalni zahtevi:} /
+    \item \textbf{Dodatne informacije:} Važni datumi mogu obuhvatati godišnjice zapošljavanja, rođendane, slave itd.
+\end{enumerate}
+
+\subsubsection{Slučaj upotrebe: Dodela benefita/bonusa}
+\begin{enumerate}
+    \item \textbf{Kratak opis:} HR menadžer vrši dodelu benefita ili bonusa zaposlenima na osnovu njihovih postignuća ili jubileja  .
+    \item \textbf{Učesnici:}
+        \begin{itemize}
+            \item HR menadžer
+        \end{itemize}
+    \item \textbf{Preduslovi:} HR menadžer je registrovan korisnik sistema. HR menadžer ima pristup podacima o radnicima. Sistem je u funkciji.
+    \item \textbf{Postuslovi:} Informacije o dodeljenim benefitima/bonusima su ažurirane u sistemu.
+    \item \textbf{Osnovni tok:}
+        \begin{enumerate}
+            \item HR menadžer otvara stranicu za dodelu benefita/bonusa.
+            \item Sistem prikazuje listu zaposlenih.
+            \item HR menadžer bira zaposlenog kome želi dodeliti benefit ili bonus.
+            \item Sistem prikazuje obrazac za unos informacija o dodeli benefita/bonusa.
+            \item HR menadžer unosi vrstu benefita/bonusa, iznos ili opis.
+            \item HR menadžer pritiskom na dugme potvrđuje dodelu.
+            \item Sistem čuva informacije o dodeljenom benefitu/bonusu.
+            \item Sistem obaveštava HR menadžera o uspešnoj dodeli benefita/bonusa.
+        \end{enumerate}
+    \item \textbf{Alternativni tokovi:}
+        \begin{enumerate}
+            \item \textbf{HR menadžer nije uneo potrebne informacije.} Ako HR menadžer u koraku (e) nije uneo vrstu benefita/bonusa, iznos ili opis, sistem obaveštava HR menadžera i vraća ga na korak (d).
+        \end{enumerate}
+    \item \textbf{Podtokovi:} /
+    \item \textbf{Specijalni zahtevi:}
+        \begin{itemize}
+            \item Zahteva se obavezno polje za unos vrste benefita/bonusa.
+            \item Opciono je polje za unos iznosa ili dodatnih opisa.
+        \end{itemize}
+    \item \textbf{Dodatne informacije:} Dodela benefita može obuhvatiti dodatke na platu, dodatne slobodne dane, poklone itd.
+\end{enumerate}
+\end{document}
