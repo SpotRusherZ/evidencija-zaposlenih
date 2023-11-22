@@ -36,6 +36,7 @@
             \item Administrator popunjava sva obavezna polja.
             \item Administrator unosi jedinstveno korisničko ime / lozinku koje će zaposleni koristiti za budući pristup sistemu.
             \item Administrator potvrđuje unos.
+            \item Sistem obaveštava zaposlenog o izvršenoj operaciji putem e-mail adrese zaposlenog, sa novom privremenom lozinkom
         \end{enumerate}
     \item \textbf{Alternativni tokovi:}
         \begin{enumerate}
@@ -50,7 +51,7 @@
     \item \textbf{Dodatne informacije:} Administrator ima pristup listi svih zaposlenih u kompaniji. Obavezne informacije za zaposlenog su: ime, prezime, datum rodjenja, pozicija, trenutna lokacija rada (grad/država).
 \end{enumerate}
 
-\includegraphics[scale=0.5]{SlucajUpotrebe_KreiranjeNalogaZaposlenom.jpg}
+\includegraphics[scale=0.5]{UML/SlucajUpotrebe_KreiranjeNalogaZaposlenom.jpg}
 
 \subsubsection{Slučaj upotrebe: Deaktiviranje naloga osobama koje su prekinule radni odnos}
 \begin{enumerate}
@@ -80,6 +81,86 @@
     \item \textbf{Dodatne informacije:} Deaktivacija implicira odloženo brisanje naloga. Nakon deaktivacije nije moguće pristupiti datom nalogu, ali će sam nalog biti zadržan u bazi zaposlenih kroz kraći vremenski period radi lakšeg povraćaja naloga u ekstremnim situacijama (Na primer, u slučaju da je došlo do pogrešnog brisanja naloga). Nalog će biti permanentno obrisan kada pomenuti vremenski period istekne.
 \end{enumerate}
 
-\includegraphics[scale=0.5]{SlucajUpotrebe_DeaktiviranjeNaloga.jpg}
+\includegraphics[scale=0.5]{UML/SlucajUpotrebe_DeaktiviranjeNaloga.jpg}
+
+\subsubsection{Slučaj upotrebe: Omogućavanje ponovnog pristupa nalogu zaposlenom}
+\begin{enumerate}
+    \item \textbf{Kratak opis:} Administrator omogućava ponovni pristup nalogu zaposlenom koji sa trenutnim kredencijalima ne može da pristupi sistemu. Gubitak pristupa, kao posledica zaključavanja naloga, može da se desi ukoliko zaposleni pogreši lozinku više od 3 uzastopna puta ili ukoliko nije promenio privremeno generisanu lozinku od strane administratora u predviđenom vremenskom periodu.
+    \item \textbf{Učesnici:}
+        \begin{itemize}
+            \item Administrator
+            \item Zaposleni
+        \end{itemize}
+    \item \textbf{Preduslovi:} Sistem je u funkciji. Administrator ima pristup internetu, sistemu, kao i privilegije potrebne za promenu lozinke zaposlenom.
+    \item \textbf{Postuslovi:} Zaposleni uspešno može da pristupi sistemu koristeći novi set kredencijala.
+    \item \textbf{Osnovni tok:}
+        \begin{enumerate}
+            \item Administrator otvara stranicu sa listom svih zaposlenih u kompaniji.
+            \item Sistem prikazuje listu svih zaposlenih i polje za pretragu zaposlenih po korisničkom imenu.
+            \item Administrator unosi korisničko ime zaposlenog u polje za pretragu.
+            \item Sistem otvara stranicu zaposlenog sa svim pratećim podacima o istom.
+            \item Administrator bira opciju za uređivanje podataka o zaposlenom.
+            \item Administrator generiše novu lozinku za zaposlenog.
+            \item Sistem otvara stranicu potvrde o zatraženoj akciji uz upozorenje o posledicama operacije
+            \item Administrator potvrđuje unos.
+            \item Sistem obaveštava zaposlenog o izvršenoj operaciji putem e-mail adrese zaposlenog, sa novom privremenom lozinkom
+        \end{enumerate}
+    \item \textbf{Alternativni tokovi:}
+        \begin{enumerate}
+            \item \textbf{Uneto korisničko ime ne odgovara nijednom zaposlenom.} Ukoliko pretraga zaposlenog po korisničkom imenu ne vrati rezultate, interfejs obaveštava administratora i vraća ga na korak (b).
+            \item \textbf{Uneta lozinka odgovara jednoj od prethodnih 10 lozinka za korisnički nalog zaposlenog.} Kako poslednjih 10 lozinki mora biti unikatno, sistem vraća administratora na korak (f)
+        \end{enumerate}
+    \item \textbf{Podtokovi:} /
+    \item \textbf{Specijalni zahtevi:}
+        \begin{itemize}
+            \item Lozinka mora biti kreirana sa kratkim vremenskim periodom validnosti (na primer 2 dana). Zaposleni mora biti obavešten o datom vremenskom periodu, i ručno promeniti lozinku nakon uspešnog prijavljivanja u sistem.
+        \end{itemize}
+    \item \textbf{Dodatne informacije:} Administrator ima pristup listi svih zaposlenih u kompaniji.
+\end{enumerate}
+
+\includegraphics[scale=0.5]{UML/SlucajUpotrebe_PonovniPristupNalogu.jpg}
+
+\subsubsection{Slučaj upotrebe: Obezbeđivanje radne opreme zaposlenom}
+\begin{enumerate}
+    \item \textbf{Kratak opis:} Proces naručivanja i dostave opreme koja je neophodna zaposlenom za svakodnevni rad u kompaniji.
+    \item \textbf{Učesnici:}
+        \begin{itemize}
+            \item Administrator
+            \item Zaposleni
+        \end{itemize}
+    \item \textbf{Preduslovi:} Sistem je u funkciji. Administrator ima pristup internetu, sistemu. Lista opreme neophodna za rad zaposlenog je dostavljena administratoru.
+    \item \textbf{Postuslovi:} Oprema je dostavljena administratoru. Zaposleni je obavešten da može da preuzme opremu.
+    \item \textbf{Osnovni tok:}
+        \begin{enumerate}
+            \item Administrator otvara stranicu za naručivanje poslovne opreme.
+            \item Sistem prikazuje listu opreme koju je moguće naručiti.
+            \item Administrator selektuje opremu koja je neophodna zaposlenom.
+            \item Administrator upisuje opravdanje za naručivanje selektovane opreme.
+            \item Administrator ponavlja korake (c) i (d) dok sva neophodna oprema nije izabrana i naručivanje opravdano.
+            \item Administrator unosi e-mail zaposlenog kome je oprema namenjena.
+            \item Administrator bira lokaciju kompanije za dostavljanje preko opadajuće liste lokacija.
+            \item Sistem otvara stranicu potvrde o zatraženoj akciji.
+            \item Administrator potvrđuje unos.
+            \item Sistem čuva informacije o narudžbini.
+            \item Administrator može pokrenuti podtok \textbf{(a)} u momentu kada je oprema dostavljena administratoru.
+        \end{enumerate}
+    \item \textbf{Alternativni tokovi:} /
+    \item \textbf{Podtokovi:}
+        \begin{enumerate}
+            \item \textbf{Obaveštavanje zaposlenog o dostavljenoj opremi:}
+                \begin{enumerate}
+                    \item Administrator otvara stranicu sa informacijama o narudžbini.
+                    \item Administrator potvrđuje da je roba fizički dostavljena na izabranu lokaciju kompanije.
+                    \item Administrator potvrđuje da je roba u korektnom stanju.
+                    \item Administrator potvrđuje prethodni unos klikom na dugme Završi Narudžbinu.
+                    \item Sistem šalje automatsku e-mail poruku zaposlenom da je robu moguće preuzeti.
+                    \item Sistem arhivira stranicu o narudžbini.
+                \end{enumerate}
+        \end{enumerate}
+    \item \textbf{Specijalni zahtevi:} /
+    \item \textbf{Dodatne informacije:} Obavezna polja za administratora su: e-mail adresa zaposlenog, lokacija dostave, barem jedan komad bilo koje opreme selektovan.
+\end{enumerate}
+
+\includegraphics[scale=0.5]{UML/SlucajUpotrebe_RadnaOprema.jpg}
 
 \end{document}
