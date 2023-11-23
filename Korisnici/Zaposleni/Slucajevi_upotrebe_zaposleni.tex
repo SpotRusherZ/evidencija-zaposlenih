@@ -23,8 +23,8 @@
         \begin{enumerate}
             \item Zaposleni otvara stranicu gde se prikazuju dani i uneti radni sati za te dane.
             \item Pritiska dugme za dodavanje novog dana i broja unetih radnih sati.
-            \item Prikazuje se formular koji sadrži polja za odabir dana, broj odrađenih radnih sati, i opis odrađenog posla.
-            \item Zaposleni popunjava formular.
+            \item Prikazuje se forma koji sadrži polja za odabir dana, broj odrađenih radnih sati, i opis odrađenog posla.
+            \item Zaposleni popunjava formu.
             \item Potvrđuje unos za taj dan.
             \item Sistem vrši obradu podataka.
             \item Sistem čuva unete podatke u bazi podataka.
@@ -64,12 +64,54 @@
         \end{enumerate}
     \item \textbf{Alternativni tokovi:}
         \begin{enumerate}
-            \item \textbf{Zaposleni je odabrao nevalidan broj radnih sati}. Ukoliko u koraku (d) zaposleni unese radne sate koji predstavljaju negativan broj, prikazuje mu se odgovarajuća poruka o grešci. Proces se nastavlja u koraku (d).
+            \item \textbf{Zaposleni je krenuo da odabira nedozvoljen broj dana za odmor}. Ukoliko u koraku (d) zaposleni unese radne sate koji predstavljaju negativan broj, prikazuje mu se odgovarajuća poruka o grešci. Proces se nastavlja u koraku (d).
         \end{enumerate}
     \item \textbf{Podtokovi:} /
     \item \textbf{Specijalni zahtevi:} /
     \item \textbf{Dodatne informacije:} Polje za unosenje broja radnih sati je obavezno.
 \end{enumerate}
 \includegraphics[scale=0.5]{IzmenaTiketa.jpg}
+
+\section{Slučaj upotrebe: Prijavljivanje neradnih dana}
+\begin{enumerate}
+    \item \textbf{Kratak opis:} Zaposleni unosi u sistem neradne dane sto mogu biti dani odmora ili odsustvo.
+    \item \textbf{Učesnici:}
+        \begin{itemize}
+            \item Zaposleni
+        \end{itemize}
+    \item \textbf{Preduslovi:} Zaposleni nije iskoristio ukupan broj dana od odmora.
+    \item \textbf{Postuslovi:} Informacije su ažurirane u sistemu i korisnik vidi koliko mu je dana od odmora ostalo.
+    \item \textbf{Osnovni tok:}
+        \begin{enumerate}
+            \item Zaposleni otvara stranicu za slobodne dane, gde mu se prikazuje ukupan broj slobodnih dana, kao i broj dana koji mu je ostao.
+            \item Pritiskom na dugme za unosenje slobodnih dana, otvara mu se forma.
+            \item Na formi bira jednu od dve sledece opcije: odmor, plaćeno odsustvo.
+            \item Ako je uneta opcija za dane odmora, izvršava se podtok P1, inače se izvršava podtok P2.
+            \item Nakon popunjavanja forme, pritiska dugme za potvrdu unosa podataka.
+            \item Na stranici se prikazuje azuriran broj dana za odmor i plaćeno odsustvo.
+        \end{enumerate}
+    \item \textbf{Podtokovi:}
+        \begin{enumerate}
+            \item Dani odmora
+            \begin{enumerate}
+                \item Prikazuje se forma koja sadrži polje za odabir dana za odmor.
+                \item Klikom na polje za odabir dana, zaposlenom se prikazuju unapred određeni dani za odmor.
+                \item Zaposleni selektuje dane.
+                \item Potvrdnim klikom, prikazuje mu se forma za opcioni unos poruke za zaposlene koji žele da ga kontaktiraju. 
+            \end{enumerate}
+            \item Plaćeno odsustvo
+            \begin{enumerate}
+                \item Prikazuje se forma koja sadrži polje za odabir dana za plaćeno odsustvo kao i polje gde se navodi razlog.
+            \end{enumerate}  
+    \end{enumerate}
+    \item \textbf{Alternativni tokovi:}
+        \begin{enumerate}
+            \item \textbf{Zaposleni je iskoristio dane plaćenog odsustva}. Ukoliko u koraku iii. podtoku (a) zaposleni selektuje dan kojim bi premašio dozvoljen broj dana za odmor, izašla bi mu poruka o grešci na ekranu, i u istom koraku se nastavlja proces.
+            \item \textbf{Zaposleni je krenuo da odabira nedozvoljen broj dana za odmor}. Ukoliko u koraku (d) osnovnog toka zaposleni odabere opciju korišćenja plaćenog odsutva a pritom je te dane iskoristio, izašla bi mu poruka o grešci na ekranu, i u istom koraku se nastavlja proces.
+        \end{enumerate}
+    \item \textbf{Specijalni zahtevi:} /
+    \item \textbf{Dodatne informacije:} /.
+\end{enumerate}
+
 
 \end{document}
