@@ -1,7 +1,6 @@
 <template>
     <div style="width: 1000px; height: 1000px; background: #1E1E1E;display: flex; justify-content: center; align-items: center;">
   <select
-      v-model="benefit"
       style="
         width: 330px;
         height: 60px;
