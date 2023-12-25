@@ -1,7 +1,7 @@
 
 
 <template>
-<kreiranje-zahteva></kreiranje-zahteva>
+<zahtevi></zahtevi>
 
 </template>
 
@@ -12,10 +12,11 @@
 
 <script>
 import KreiranjeZahteva from './components/Kreiranje-Zahteva.vue';
-
+import Zahtevi from './components/Zahtevi.vue';
 export default {
   components: {
     KreiranjeZahteva,
+    Zahtevi
   },
 };
 </script>
