@@ -34,7 +34,7 @@
   <div style="width: 133px; height: 27px; left: 93px; top: 296px; position: absolute; text-align: center; color: white; font-size: 12px; font-family: Inter; font-weight: 700; word-wrap: break-word">
 <input
           type="text"
-          placeholder="Unesite opis"
+          v-model="opis"
           style="
             width: 600px;
             height: 100px;
@@ -54,6 +54,7 @@
         /> </div>
     <input
           type="text"
+          v-model="datum"
           placeholder="dd-mm-gggg"
           style="
             width: 330px;
@@ -73,15 +74,15 @@
           "
         />
   <div style="width: 183px; height: 42px; padding-left: 44px; padding-right: 44px; padding-top: 5px; padding-bottom: 5px; left: 247px; top: 422px; position: absolute; background: #EBC786; border-radius: 5px; overflow: hidden; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
-    <div style="text-align: center; color: white; font-size: 24px; font-family: Inter; font-weight: 600; word-wrap: break-word">Potvrdi</div>
+    <span @click="clicked=true" style="text-align: center; color: white; font-size: 24px; font-family: Inter; font-weight: 600; word-wrap: break-word">Potvrdi</span>
   </div>
   
-  <template v-if="false">
+  <template v-if="clicked">
   <div style="width: 336px; height: 187px; left: 160px; top: 201px; position: absolute">
     <div style="width: 336px; height: 187px; left: 0px; top: 0px; position: absolute; background: #6B614E; border-radius: 20px"></div>
     <div style="width: 280px; height: 30px; left: 22px; top: 17px; position: absolute; color: white; font-size: 12px; font-family: Inter; font-weight: 700; word-wrap: break-word"><br/>Zahtev za rad od kuće je uspešno kreiran<br/></div>
     <div style="width: 105px; height: 25px; padding-left: 44px; padding-right: 44px; padding-top: 5px; padding-bottom: 5px; left: 115px; top: 142px; position: absolute; background: #EBC786; border-radius: 5px; overflow: hidden; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
-      <div style="text-align: center; color: white; font-size: 13px; font-family: Inter; font-weight: 600; word-wrap: break-word">Potvrdi</div>
+      <span @click="clicked=false, opis='Opis', benefit='Izaberi benefit', datum='dd-mm-gggg'" style="text-align: center; color: white; font-size: 13px; font-family: Inter; font-weight: 600; word-wrap: break-word">Potvrdi</span>
     </div>
   </div>
   </template>
@@ -92,7 +93,12 @@
 
 export default{
     data() {
-
+      return {
+        clicked:false,
+        opis:"Opis",
+        benefit: "Izaberi benefit",
+        datum: "dd-mm-gggg"
+      }
     }
 }
 </script>
