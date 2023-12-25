@@ -17,6 +17,7 @@
             color:#FFFFFF ">
             Marko Marković</h3>
     <span
+        @click="redirect"
           style="
             width: 330px;
             height: 60px;
@@ -76,6 +77,11 @@ export default{
         benefit: "Izaberi benefit",
         datum: "dd-mm-gggg"
       }
+    },
+    methods: {
+        redirect(){
+            this.$router.push('/zahtev');
+        }
     }
 }
 </script>
