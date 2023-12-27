@@ -501,6 +501,13 @@ Za osobu zaposlenu u kompaniji, bez obzira na ulogu u okviru iste, važe sledeć
     \item \textbf{Dodatne informacije:} /
 \end{enumerate}
 
+\begin{figure} [!ht]
+    \begin{center}
+        \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{{Korisnici/Zaposleni/UML/PregledZahteva.jpg}}
+    \end{center}
+\caption{Dijagram za pregled unetih sati.}
+\end{figure}
+
 \subsubsection{Slučaj upotrebe: Unošenje radnih sati}
 \begin{enumerate}
     \item \textbf{Kratak opis:} Zaposleni unosi broj odrađenih ranih sati za konkretan dan kao i opis odrađenog posla.
@@ -531,10 +538,12 @@ Za osobu zaposlenu u kompaniji, bez obzira na ulogu u okviru iste, važe sledeć
 
 \begin{figure} [!ht]
     \begin{center}
-        \includegraphics[scale=0.5]{Korisnici/Zaposleni/UML/PrijavljivanjeRadnogVremena.jpg}
+        \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{{Korisnici/Zaposleni/BPMN/DodavanjeTiketaBPMN.jpg}}
     \end{center}
-\caption{Dijagram prijavljivanja radnog vremena.}
+\caption{Dijagram za dodavanje tiketa.}
 \end{figure}
+
+
 
 \subsubsection{Slučaj upotrebe: Izmena tiketa}
 \begin{enumerate}
@@ -566,10 +575,11 @@ Za osobu zaposlenu u kompaniji, bez obzira na ulogu u okviru iste, važe sledeć
 
 \begin{figure} [!ht]
     \begin{center}
-        \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{Korisnici/Zaposleni/UML/IzmenaTiketa.jpg}
+        \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{{Korisnici/Zaposleni/BPMN/IzmenaTiketaBPMN.jpg}}
     \end{center}
-\caption{Dijagram izmene tiketa.}
+\caption{Dijagram za dodavanje tiketa.}
 \end{figure}
+
 
 \subsubsection{Slučaj upotrebe: Kreiranje zahteva}
 \begin{enumerate}
@@ -629,12 +639,14 @@ Za osobu zaposlenu u kompaniji, bez obzira na ulogu u okviru iste, važe sledeć
     \item \textbf{Dodatne informacije:} /
 \end{enumerate}
 
+
 \begin{figure} [!ht]
     \begin{center}
-        \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{{Korisnici/Zaposleni/UML/Prijavljivanje slobodnih dana.jpg}}
+        \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{{Korisnici/Zaposleni/UML/KreiranjeZahtevaDijagramSekvenci.jpg}}
     \end{center}
-\caption{Dijagram prijavljivanja slobodnih dana.}
+\caption{Dijagram kreiranje zahteva.}
 \end{figure}
+
 
 \newpage
 \subsubsection{Slučaj upotrebe: Pregled iskorišćenosti dana odmora i sick leave-a}
@@ -659,6 +671,12 @@ Za osobu zaposlenu u kompaniji, bez obzira na ulogu u okviru iste, važe sledeć
     \item \textbf{Dodatne informacije:} /
 \end{enumerate}
 
+\begin{figure} [!ht]
+    \begin{center}
+        \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{{Korisnici/Zaposleni/UML/DijagramAktivnostiPregledSlobodnihDana.jpg}}
+    \end{center}
+\caption{Dijagram pregled slobodnih dana.}
+\end{figure}
 
 \subsubsection{Slučaj upotrebe: Pregled zahteva zaposlenog}
 \begin{enumerate}
@@ -681,6 +699,13 @@ Za osobu zaposlenu u kompaniji, bez obzira na ulogu u okviru iste, važe sledeć
     \item \textbf{Specijalni zahtevi:} /
     \item \textbf{Dodatne informacije:} /
 \end{enumerate}
+
+\begin{figure} [!ht]
+    \begin{center}
+        \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{{Korisnici/Zaposleni/UML/DijAkPregledZahteva.jpg}}
+    \end{center}
+\caption{Dijagram pregled zahteva.}
+\end{figure}
 
 \newpage
 \subsection{Aktivnosti Udruženja}
@@ -844,6 +869,53 @@ Za osobu zaposlenu u kompaniji, bez obzira na ulogu u okviru iste, važe sledeć
     \end{center}
 \caption{ER Dijagram baze podataka.}
 \end{figure}
+
+\newpage
+\section{Arhitektura sistema}
+
+U ovom poglavlju cemo opisati arhitekturu našeg sistema. Pri odabiru arhitekture cilj je bio da ima dobru podelu odgovornosti, da bude jednostavna za održavanje, da bude bezbedna, stabilna i jednostavna za razumevanje. Tip arhitekture je klijent-server, gde se komunikacija vrši uz pomoć HTTP zahteva, gde klijent ima aktivnu ulogu, ulogu pošiljaoca zahteva, dok server ima pasivnu ulogu, ulogu primaoca zahteva od klijenta. U tom tipu komunikacije, broj klijentskih računara odgovara broju aktera našeg sistema, ukupno pet, dok je broj serverskih računara 1.
+\newline
+\newline
+\newline
+Kod arhitekture servera, odabrana je slojevita arhitektura, koja ima 5 slojeva:
+\begin{enumerate}
+    \item Prezentacioni sloj
+    \item Infrastrukturni sloj
+    \item Sloj slučajeva upotrebe 
+    \item Sloj servisa
+    \item Sloj entiteta
+\end{enumerate}
+Kako su slojevi organizovani, može se videti na sledećoj slici 
+
+\begin{center}
+    \includegraphics[scale=0.5]{Arhitektura/arhitekturaSistema.png}
+\end{center}
+
+Slojevi su organizovani tako da su unutrašnjih slojevi nezavisni od spoljašnjih slojeva, svaki od njih ima jedinstvenu odgovornost čime pošujemo princip "Jedinstvena odgovornost" u OOP i što omogućava jednostavniji razvoj sistema. Ovakav izbor slojeva omogućava visoku granuliranost, i to se postiže principom "Inverzija zavisnosti". Ovakva organizacija arhitekture odgovara obrascu "Čista arhitektura".
+\newline
+\newline
+Opis slojeva:
+\newline
+\begin{enumerate}
+    \item Prezentacioni sloj - predstavlja ulaznu tačku našeg sistema. On prihvata podatke od klijenta, i šalje ih dalje sloju slučajeva upotrebe.
+    \item Sloj slučajeva upotrebe - sadrži sve slučejeve upotrebe opisane za naš sistem. Ovim želimo da naša arhitektura bude orijentisana prema opisanim slučajevima upotrebe, tako da budućim čitaocima opisa našeg sistema bude jasno šta naš sistem zapravo radi. 
+    \item Sloj entiteta - predstavlja centralni deo biznis logike našeg sistema. Ne zavise od spoljnih detalja sistema, kao što su drajveri, radni okviri i ostalo.
+    \item Sloj servisa - pored sloja entiteta, sadrži i interfejs za korišćenje baze podataka
+    \item Infrastrukturni sloj - Zavisi od sloja servisa, gde se dešava implementacija interfejsa za korišćenje baze podataka.
+\end{enumerate}
+
+
+
+Zavisnost slojeva prikazana je na sledećoj slici.
+
+
+\begin{center}
+    \includegraphics[scale=0.5]{Arhitektura/zavisnostSlojeva.png}
+\end{center}
+
+\begin{center}
+  \includegraphics[scale=0.3, angle=90]{Arhitektura/EvidencijaZaposlenihKlasniDijagram.jpg}
+\end{center}
 
 \newpage
 \section{Korisnički interfejs}
