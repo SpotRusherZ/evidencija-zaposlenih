@@ -29,7 +29,7 @@
 \end{titlepage}
 
 \newpage
-\renewcommand*\contentsname{Sadržaj:}
+\renewcommand\contentsname{Sadržaj:}
 \tableofcontents
 
 \newpage
@@ -718,7 +718,7 @@ Za osobu zaposlenu u kompaniji, bez obzira na ulogu u okviru iste, važe sledeć
             \item Zaposleni
         \end{itemize}
     \item \textbf{Preduslovi:} Sistem je u funkciji. Zaposleni ima pristup internetu i sistemu.
-    \item \textbf{Postuslovi:} Zahtev za osnivanje udruženja je uspešno podnet i u statusu je čekanja za odobravanje. Vlasnik udruženja je obavešten.
+    \item \textbf{Postuslovi:} Zahtev za osnivanje udruženja je uspešno podnet i u statusu je čekanja za odobravanje.
     \item \textbf{Osnovni tok:}
         \begin{enumerate}
             \item Zaposleni otvara stranicu za udruženja.
@@ -872,7 +872,7 @@ Za osobu zaposlenu u kompaniji, bez obzira na ulogu u okviru iste, važe sledeć
 
 \begin{figure} [!ht]
     \begin{center}
-        \includegraphics[angle=90,scale=0.3]{{Model baze/ER_ModelBaze.jpg}}
+        \includegraphics[angle=90,scale=0.3]{{Model baze/DijagramTabeleZaposleni.jpg}}
     \end{center}
 \caption{Dijagram tabela baze podataka.}
 \end{figure}
@@ -884,6 +884,11 @@ U ovom poglavlju cemo opisati arhitekturu našeg sistema. Pri odabiru arhitektur
 \newline
 \newline
 \newline
+
+\begin{center}
+    \includegraphics[scale=0.5]{Arhitektura/ArhitekturaOverview.jpg}
+\end{center}
+
 Kod arhitekture servera, odabrana je slojevita arhitektura, koja ima 5 slojeva:
 \begin{enumerate}
     \item Prezentacioni sloj
